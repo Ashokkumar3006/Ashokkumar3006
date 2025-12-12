@@ -9,12 +9,10 @@ A results-driven AI & full‑stack engineer blending distributed systems, NLP, a
 
 ---
 
-## Quick bio (for GitHub profile)
+## Quick bio 
 Full‑stack AI engineer • Built LangPDF Smart Chatbot & Smart Plug Energy Tracker • AWS Certified • Winner, Smart India Hackathon 2025 • Open to collaborations & mentorship.
 
 ---
-
-## Live repo cards & play-by-play metrics
 
 ### Electricity-Tracker
 - Repo: [Ashokkumar3006/Electricity-Tracker](https://github.com/Ashokkumar3006/Electricity-Tracker)
@@ -49,30 +47,6 @@ Short summary
 - Built with LangChain + ChromaDB + OpenAI. 90% retrieval accuracy and successfully handled 10k+ document searches, reducing lookup time by ~70%.
 
 ---
-
-## Live GitHub stats
-![Ashok's GitHub stats](https://github-readme-stats.vercel.app/api?username=Ashokkumar3006&show_icons=true&count_private=true&theme=tokyonight)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Ashokkumar3006&layout=compact&theme=tokyonight)
-
----
-
-## How these badges work
-- The repo badges (stars, forks, issues, last commit) use shields.io endpoints that query GitHub and update automatically.
-- Language-composition badges here are static badges constructed from the percentages you provided. If you want them computed live, I can add a tiny action or script to fetch language percentages from the GitHub API and render badges dynamically.
-- Play-by-play metric badges (retrieval accuracy, energy reduction, searches) are presented as evidence of impact — change the numbers directly in the README when you update metrics, or ask me to wire them to a JSON file the README reads via a static-hosted image generator.
-
----
-
-## How to install this on your GitHub profile
-1. Create a new repo named exactly: Ashokkumar3006 (or use your username).
-2. Add this README.md (replace any placeholder links if needed).
-3. Commit & push — the README will appear on your GitHub profile automatically.
-
----
-
-## Want more?
-I can:
-- Convert the language badges to be computed live (via a GitHub Action that updates a JSON or an SVG badge).
 - Add screenshot/GIF previews for each repo and a hover-activated animated banner.
 - Produce alternate color themes for badges and stats cards to match your personal brand.
 
