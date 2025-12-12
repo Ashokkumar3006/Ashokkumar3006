@@ -1,4 +1,4 @@
-# Hi there 👋 I'm Ashok Kumar S
+[![](./profile_animated_ai_developer.svg)](https://github.com/Ashokkumar3006)
 
 <img src="./banner.svg" alt="Ashok Kumar S — Banner" width="100%"/>
 
