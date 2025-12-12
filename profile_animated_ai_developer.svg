@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid slice">
+  <title>Ashok Kumar S — animated header (name → AI Developer)</title>
   <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#00c6ff"/>
-      <stop offset="0.5" stop-color="#0072ff"/>
-      <stop offset="1" stop-color="#7c3aed"/>
-    </linearGradient>
     <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="18" result="b"/>
       <feBlend in="SourceGraphic" in2="b"/>
@@ -13,59 +9,67 @@
       svg { font-family: "Segoe UI", Roboto, Arial, sans-serif; }
       .bg { fill: #061126; }
       .blob { opacity:0.12; filter:url(#blur); }
+
       .name {
         fill: #ffffff;
         font-weight: 800;
         font-size: 40px;
-        letter-spacing: -0.4px;
-        dominant-baseline: hanging;
+        letter-spacing: -0.3px;
+        will-change: transform, opacity;
+        animation: nameAnim 6s ease-in-out infinite;
+        transform-origin: 0 0;
       }
+
       .role {
         fill: #dbeafe;
-        font-weight: 600;
-        font-size: 18px;
-        dominant-baseline: hanging;
-      }
-
-      /* Cross-fade animation: name -> role -> name */
-      .name {
-        animation: nameCycle 6s ease-in-out infinite;
-        transform-origin: 0 0;
-      }
-      .role {
-        animation: roleCycle 6s ease-in-out infinite;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: -0.2px;
+        will-change: transform, opacity;
+        animation: roleAnim 6s ease-in-out infinite;
         transform-origin: 0 0;
       }
 
-      @keyframes nameCycle {
+      /* Timeline (6s total):
+         0.0 - 2.0s  : NAME fully visible
+         2.0 - 2.6s  : NAME fades down & out; ROLE fades in to same spot
+         2.6 - 4.6s  : ROLE fully visible
+         4.6 - 5.2s  : ROLE fades out; NAME remains hidden
+         5.2 - 6.0s  : prepare for loop -> NAME visible again at 6.0s
+      */
+      @keyframes nameAnim {
         0%   { opacity: 1; transform: translateY(0px); }
-        33%  { opacity: 1; transform: translateY(0px); }
-        43%  { opacity: 0; transform: translateY(-10px); }
-        96%  { opacity: 0; transform: translateY(-10px); }
-        100% { opacity: 1; transform: translateY(0px); }
-      }
-      @keyframes roleCycle {
-        0%   { opacity: 0; transform: translateY(10px); }
-        43%  { opacity: 1; transform: translateY(0px); }
-        76%  { opacity: 1; transform: translateY(0px); }
-        86%  { opacity: 0; transform: translateY(-8px); }
-        100% { opacity: 0; transform: translateY(-8px); }
+        33%  { opacity: 1; transform: translateY(0px); }     /* hold */
+        43%  { opacity: 0; transform: translateY(14px); }    /* move down & fade */
+        100% { opacity: 0; transform: translateY(14px); }    /* stay hidden until loop */
       }
 
-      /* small float for right card */
-      .float {
-        animation: float 6s ease-in-out infinite;
+      @keyframes roleAnim {
+        0%   { opacity: 0; transform: translateY(-12px); }   /* start slightly up/hidden */
+        43%  { opacity: 1; transform: translateY(0px); }     /* faded in to same spot */
+        76%  { opacity: 1; transform: translateY(0px); }     /* hold */
+        86%  { opacity: 0; transform: translateY(-12px); }   /* fade out up */
+        100% { opacity: 0; transform: translateY(-12px); }   /* stay hidden until loop */
       }
+
+      /* subtle float for right card */
+      .float { animation: float 6s ease-in-out infinite; }
       @keyframes float {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-6px); }
         100% { transform: translateY(0px); }
       }
+
+      /* small responsive tuning: scale text down for narrow viewports */
+      @media (max-width: 700px) {
+        .name { font-size: 28px; }
+        .role { font-size: 14px; }
+      }
     ]]></style>
   </defs>
 
   <!-- background -->
-  <rect class="bg" width="1200" height="200" rx="8" />
+  <rect class="bg" width="1200" height="200" rx="8"/>
 
   <!-- soft glowing blobs -->
   <g class="blob">
@@ -74,27 +78,29 @@
     <ellipse cx="640" cy="30" rx="200" ry="80" fill="#a78bfa"/>
   </g>
 
-  <!-- left content: name + animated role -->
-  <g transform="translate(60,46)">
+  <!-- Left: animated name -> role (same position) -->
+  <g transform="translate(60,44)">
+    <!-- NAME visible first -->
     <text class="name" x="0" y="0">Ashok Kumar S</text>
-    <!-- The role text appears in the same spot after the name fades -->
-    <text class="role" x="0" y="46">AI Developer</text>
+
+    <!-- ROLE occupies the SAME spot and fades in after name fades down -->
+    <text class="role" x="0" y="6">AI Developer</text>
 
     <!-- subtle underline -->
-    <rect x="-6" y="74" rx="6" ry="6" width="520" height="2" fill="#ffffff" opacity="0.04"/>
+    <rect x="-6" y="78" rx="6" ry="6" width="520" height="2" fill="#ffffff" opacity="0.04"/>
   </g>
 
-  <!-- right callout card -->
-  <g transform="translate(760,28)" class="float">
+  <!-- Right floating callout -->
+  <g transform="translate(760,28)" class="float" aria-hidden="true">
     <rect x="0" y="0" rx="12" ry="12" width="380" height="140" fill="#071028" opacity="0.78" stroke="rgba(255,255,255,0.03)"/>
-    <text x="20" y="32" font-size="15" fill="#fff" font-weight="700">Key highlights</text>
-    <text x="20" y="62" font-size="13" fill="#bfe6ff">• LangPDF — 90% retrieval accuracy</text>
-    <text x="20" y="86" font-size="13" fill="#bfe6ff">• Smart Plug — 40% energy reduction</text>
-    <text x="20" y="110" font-size="12" fill="#9ecbff">• 10k+ document searches</text>
+    <text x="20" y="34" font-size="15" fill="#fff" font-weight="700">Key highlights</text>
+    <text x="20" y="64" font-size="13" fill="#bfe6ff">• LangPDF — 90% retrieval accuracy</text>
+    <text x="20" y="90" font-size="13" fill="#bfe6ff">• Smart Plug — 40% energy reduction</text>
+    <text x="20" y="116" font-size="12" fill="#9ecbff">• 10k+ document searches</text>
   </g>
 
   <!-- footer hint -->
-  <g transform="translate(60,154)">
-    <text font-size="11" fill="#8fb9d9">Click the image or embed it at the top of your README.md</text>
+  <g transform="translate(60,156)">
+    <text font-size="11" fill="#8fb9d9">Embed this image at the top of your README.md</text>
   </g>
 </svg>
