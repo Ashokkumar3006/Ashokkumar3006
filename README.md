@@ -1,6 +1,5 @@
 [![](./profile_animated_ai_developer.svg)](https://github.com/Ashokkumar3006)
 
-<img src="./banner.svg" alt="Ashok Kumar S — Banner" width="100%"/>
 
 [![Gmail](https://img.shields.io/badge/email-ashokkumars3005%40gmail.com-D14836?logo=gmail&logoColor=white)](mailto:ashokkumars3005@gmail.com) [![Location](https://img.shields.io/badge/Chengalpattu-India-0078D4)](https://www.google.com/maps/search/Chengalpattu)  
 [![LeetCode](https://img.shields.io/badge/LeetCode-1823-yellow?logo=leetcode)](https://leetcode.com/) [![CodeChef](https://img.shields.io/badge/CodeChef-1558-orange?logo=codechef)](https://www.codechef.com/) [![CodeForces](https://img.shields.io/badge/CodeForces-978-4B6CB7?logo=codeforces)](https://codeforces.com/)
