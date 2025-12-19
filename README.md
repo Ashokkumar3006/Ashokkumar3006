@@ -9,7 +9,7 @@ A results-driven AI & full‑stack engineer blending distributed systems, NLP, a
 ---
 
 ## Quick bio 
-Full‑stack AI engineer • Built LangPDF Smart Chatbot & Smart Plug Energy Tracker • AWS Certified • Winner, Smart India Hackathon 2025 • Open to collaborations & mentorship.
+Full‑stack AI engineer • Built LangPDF Smart Chatbot & Smart Plug Energy Tracker • AWS Certified • Winner, Smart India Hackathon 2025 • Open to collaborations.
 
 ---
 
