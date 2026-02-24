@@ -7,53 +7,25 @@
       <feBlend in="SourceGraphic" in2="b"/>
     </filter>
 
-    <style><![CDATA[
+    <style>
       svg { font-family: "Segoe UI", Roboto, Arial, sans-serif; }
-
       .bg { fill: #050b18; }
-
       .blob { opacity:0.14; filter:url(#blur); }
-
       .textMain {
         fill: #ffffff;
         font-weight: 800;
         font-size: 54px;
         letter-spacing: -0.4px;
-        animation: nameAnim 6s ease-in-out infinite;
-        transform-origin: center;
         text-anchor: middle;
       }
-
       .textSub {
         fill: #cfe3ff;
         font-weight: 800;
         font-size: 54px;
         letter-spacing: -0.4px;
-        animation: roleAnim 6s ease-in-out infinite;
-        transform-origin: center;
         text-anchor: middle;
       }
-
-      /* Animation timeline (6s loop) */
-      @keyframes nameAnim {
-        0%   { opacity: 1; transform: translateY(0px); }
-        33%  { opacity: 1; transform: translateY(0px); }
-        43%  { opacity: 0; transform: translateY(16px); }
-        100% { opacity: 0; transform: translateY(16px); }
-      }
-
-      @keyframes roleAnim {
-        0%   { opacity: 0; transform: translateY(-18px); }
-        43%  { opacity: 1; transform: translateY(0px); }
-        76%  { opacity: 1; transform: translateY(0px); }
-        86%  { opacity: 0; transform: translateY(-18px); }
-        100% { opacity: 0; transform: translateY(-18px); }
-      }
-
-      @media (max-width: 700px) {
-        .textMain, .textSub { font-size: 34px; }
-      }
-    ]]></style>
+    </style>
   </defs>
 
   <!-- Background -->
@@ -68,8 +40,19 @@
 
   <!-- Centered container -->
   <g transform="translate(600,110)">
-    <text class="textMain" x="0" y="0">Ashok Kumar S</text>
-    <text class="textSub" x="0" y="0">Backend Engineer & AI Developer</text>
+    <!-- Name text with SMIL animation -->
+    <text class="textMain" x="0" y="0">
+      Ashok Kumar S
+      <animate attributeName="opacity" values="1;1;1;0;0;0;0;0;1" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,0;0,16;0,16;0,16;0,16;0,16;0,16;0,0" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </text>
+    
+    <!-- Role text with SMIL animation -->
+    <text class="textSub" x="0" y="0">
+      Backend Engineer &amp; AI Developer
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-18;0,-18;0,0;0,0;0,0;0,0;0,-18;0,-18;0,-18" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </text>
   </g>
 
 </svg>
